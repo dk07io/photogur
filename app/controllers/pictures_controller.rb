@@ -1,7 +1,9 @@
 class PicturesController < ApplicationController
 
   def index
-    @picture = Picture.all
+    @most_recent_pictures = Picture.most_recent_five
+    # @picture = Picture.all
+    # Instead of showing all pictures, the most recent five photos will be shown on the homepage.
   end
 
   def new
