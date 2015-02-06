@@ -2,6 +2,8 @@ class PicturesController < ApplicationController
 
   def index
     @most_recent_pictures = Picture.most_recent_five
+    @one_month_pictures = Picture.created_before(1.day.ago)
+
     # @picture = Picture.all
     # Instead of showing all pictures, the most recent five photos will be shown on the homepage.
   end

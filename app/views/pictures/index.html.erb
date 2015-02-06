@@ -1,5 +1,4 @@
-<h1>Hi my first picture page!</h1>
-
+<h1>Featured:</h1>
 <ul>
   <% @most_recent_pictures.each do |picture| %>
     <li><%= picture.title %>, <%= picture.artist %></li>
@@ -7,7 +6,14 @@
   <% end %>
 </ul>
 
+<h1>Yesterday's upload:</h1>
+<ul>
+  <% @one_month_pictures.each do |picture| %>
+  <li><%= picture.title %>, <%= picture.artist %></li>
+  <%= link_to image_tag(picture.url), "/pitcures/#{picture.id}" %>
+  <% end %>
+</ul>
+
 
 <%= link_to "Back to Pictures", pictures_url %>
-
 
